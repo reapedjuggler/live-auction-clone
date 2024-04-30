@@ -45,12 +45,13 @@ const Ad = (props) => {
 
   // Bid button status
   const updateBidButtonStatus = (updatedPrice) => {
+    console.log(updatedPrice, props.adDetails);
     if (
       updatedPrice > Number(props.adDetails.currentPrice.$numberDecimal) &&
       props.adDetails.auctionStarted &&
       !props.adDetails.auctionEnded
     ) {
-      setBidButton(false);
+      
     } else {
       setBidButton(true);
     }
